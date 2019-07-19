@@ -246,6 +246,7 @@ bool AddTimeLockTriggers(CHK* v2, char* timeLockFrom, char* timeLockTo, char* me
 			if (condition->ConditionType == 15 && condition->groupNumber == 334581) { // Previous timelock trigger
 				Action* action = &(trigger->actions[0]);
 				if (condition->Comparision == AT_LEAST) { // At least
+					condition->Quantifier = lockTo;
 					replacedTo = true;
 					v2STR->setRawString(action->TriggerText, userString);
 					LOG_INFO("TRIGGER PROCESSOR", "Found previous begin interval trigger, replacing message");
@@ -254,6 +255,7 @@ bool AddTimeLockTriggers(CHK* v2, char* timeLockFrom, char* timeLockTo, char* me
 					}
 				}
 				else if (condition->Comparision == AT_MOST) { // At most
+					condition->Quantifier = lockFrom;
 					replacedFrom = true;
 					LOG_INFO("TRIGGER PROCESSOR", "Found previous end interval trigger, replacing message");
 					v2STR->setRawString(action->TriggerText, userString);
