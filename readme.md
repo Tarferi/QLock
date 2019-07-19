@@ -7,9 +7,6 @@ Since the sources for map time locking are already public in QCHK, it makes sens
 
 This contains the latest development version of the project, unreleased features, with some bugs created, removed, or worse, undetermined.
 
-[This project](https://github.com/ShadowFlare/SFmpqapi) contains sources for the DLL files that are needed by this tool.
-
-
 Usage:
 
 -i <input_file> Input map file
